@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Project</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <button class="primary-button" id="converttodfa">
+                    Convert NFA to DFA
+                </button>
+                <button class="primary-button" id="minimize">
+                    Minimize DFA
+                </button>
+            </div>
+            <div>
+                <button class="ternary-button" id="addState">
+                    Add Transition&nbsp;<i class="fa fa-plus"></i>
+                </button>
+            </div>
+            <div>
+                <button class="secondary-button" id="example1">
+                     Example #1
+                </button>
+                <button class="secondary-button" id="example2">
+                     Example #2
+                </button>
+                <button class="secondary-button" id="example3">
+                     Example #3
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="debug">
+        <div class="flex info">
+            <div class="flex flex-center">
+                <label>Final States&nbsp;&nbsp;</label>
+                <input type="text" class="custom-form" id="final-states" placeholder="q0, q1,..."/>
+            </div>
+            <div class="flex flex-center">
+                <label>Initial State &nbsp;&nbsp;</label>
+                <input type="text" class="custom-form" id="start-state" placeholder="q0" />
+            </div>
+        </div>
+        <div id="statesContainer" class="flex dc">
+        </div>
+        <div id="graphviz_svg_div">
+            <!-- Target for dynamic svg generation -->
+        </div>
+    </main>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://www.webgraphviz.com/viz.js"></script>
+    <script src="{{ url_for('static',filename='script.js') }}" defer></script>
+</body>
+</html>
